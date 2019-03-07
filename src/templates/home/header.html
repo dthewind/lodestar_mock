@@ -1,0 +1,51 @@
+<div class="ls-container" data-ng-class="getClass()">
+
+	<div id="ls-nav-home" data-ng-click="goHome()">	
+
+		<div class="lodestar" data-ng-if="!isAdminState() && getVersion()==='lodestar'">
+			<img data-ng-src="img/Lodestar-WT_web.png"/>
+		</div>
+
+		<div class="ids" data-ng-if="!isAdminState() && getVersion()==='ids'">
+			<img data-ng-src="img/IRD_web.png"/>
+		</div>
+
+		<div class="text" data-ng-if="isAdminState() || getVersion()==='internal'">
+			<span data-ng-bind="getLogoText()"></span>
+		</div>
+
+	</div>
+
+	<div id="ls-nav-links">
+
+		<!-- <div class="link background">
+			<a data-ng-href="{{linkHome}}">
+				<span>Back to Cerulli.com</span>
+				<span data-dtw-icon data-icon="'caret-right'" data-color="getIconColor()"></span>
+			</a>				
+		</div>
+
+		<div class="link">
+			<a data-ng-href="{{linkContact}}" target="_blank" data-tooltip="Contact Us">
+				<div data-dtw-icon data-icon="'envelope'" data-color="getIconColor()"></div>
+			</a>
+		</div>
+
+		<div class="link last-user">
+			<a data-ng-href="{{linkInfo}}" target="_blank">
+				<div data-dtw-icon data-icon="'info-circle'" data-color="getIconColor()"></div>
+			</a>
+		</div>
+
+		<div class="link admin" data-ng-if="showAdmin()" data-ng-repeat="item in adminLinks">
+			<a data-ng-click="clickAdmin(item)">
+				<span data-ng-bind="item.display"></span>
+				<i class="fa fa-caret-right fa-lg"></i>
+			</a>
+		</div> -->
+
+		<div id="my-account" data-ls-my-account>jjjj</div>
+
+	</div>
+
+</div>

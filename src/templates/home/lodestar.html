@@ -1,0 +1,47 @@
+<div class="ls-container lodestar" data-ng-controller="HomeLodestarController">
+
+	<div class="left">
+		<div class="ls-container">
+			<div class="header">Lodestar Subscriptions</div>
+			<div class="body">
+				<div data-ng-repeat="item in subscriptions | subLodestar | orderBy:'name'" class="subscription" data-ng-class="{'owned':item.active}" data-ng-click="open(item)">
+					<div class="top">
+						<div class="ls-container">
+							<div class="title" data-ng-bind="item.name"></div>
+							<div class="desc" data-ng-bind="item.desc_short"></div>
+						</div>							
+					</div>
+					<div class="bottom">
+						<div class="ls-container">
+							<div class="blueone view-icon" data-dtw-icon data-icon="'chevron-circle-right'" data-color="'blue-1'"></div>
+							<div class="whiteone view-icon" data-dtw-icon data-icon="'chevron-circle-right'" data-color="'white'"></div>
+							<div data-ng-bind="item.active ? 'View' : 'Learn More' "></div>
+						</div>						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="right">
+		<div class="ls-container">
+			<div class="header">Support</div>
+			<div class="body">
+				<div class="links">
+					<a data-ng-href="{{linkTraining}}" target="_blank">What is Lodestar?</a>
+					<a data-ng-href="{{linkDemo}}" target="_blank">Schedule a Demo</a>
+				</div>
+				<div class="video">
+					<div class="title">Watch Lodestar Video</div>
+					<div class="ls-container">
+						<iframe src="{{linkVideo}}"></iframe>
+						<div data-ng-click="clickVideo()"></div>
+					</div>						
+				</div>
+			</div>
+		</div>		
+	</div>
+
+	<div class="divider"></div>
+
+</div>

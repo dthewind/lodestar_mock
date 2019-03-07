@@ -1,0 +1,13 @@
+<div data-ui-view>
+<!-- 
+version.html
+using HomeController
+via ui-routing
+data-ng-include=" 'home/' + page + '.html' "
+-->
+	<div id="ls-landing-version">
+		<div data-ls-home-lodestar data-ng-show="page === 'lodestar'"></div>
+		<div data-ls-home-ids data-ng-show="page === 'ids'"></div>
+		<div data-ls-home-internal data-ng-show="page === 'internal'"></div>
+	</div>
+</div>

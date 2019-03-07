@@ -1,0 +1,38 @@
+<div class="ls-container internal" data-ng-controller="HomeInternalController">
+
+	<div class="left">
+		<div class="ls-container">
+			<div class="items">
+				<div data-ng-repeat="item in subscriptions | subsOther | orderBy:'name'" class="subscription" data-ng-class="{'owned':item.active}" data-ng-mouseenter="enter(item)" data-ng-mouseleave="leave()" data-ng-click="open(item)">
+					<div class="top">
+						<div class="ls-container">
+							<div class="title" data-ng-bind="item.name"></div>
+						</div>							
+					</div>
+					<div class="bottom">
+						<div class="ls-container">
+							<div class="view-icon" data-dtw-icon data-icon="'chevron-circle-right'" data-color="'blue-1'"></div>
+							<div data-ng-bind="item.active ? 'View' : 'Learn More' "></div>
+						</div>						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="right">
+		<div class="ls-container">
+			<div class="header" data-ng-if="selected.name">Subscriptions</div>
+			<div class="body">
+				<div class="list" data-ng-if="selected.name">
+					<ul>
+						<li data-ng-repeat="item in selected.subs | subOther | orderBy:'name'" data-ng-bind="item.name" data-ng-class="{'active':item.active}"></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>	
+
+	<div class="divider"></div>	
+
+</div>

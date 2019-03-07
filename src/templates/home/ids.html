@@ -1,0 +1,70 @@
+<div class="ls-container ids" data-ng-controller="HomeIDSController">
+
+	<div class="left">
+		<div class="ls-container">
+			<div class="header">Practice Areas</div>
+			<div class="body">
+				<div class="us">					
+					<div class="items">
+						<div data-ng-repeat="item in subsUs | subsOther:true | orderBy:'name'" class="subscription" data-ng-class="{'owned':item.active}" data-ng-mouseenter="enter(item)" data-ng-mouseleave="leave()" data-ng-click="open(item)">
+							<div class="top">
+								<div class="ls-container">
+									<div class="title" data-ng-bind="item.name"></div>
+								</div>							
+							</div>
+							<div class="bottom">
+								<div class="ls-container">
+									<div class="view-icon" data-dtw-icon data-icon="'chevron-circle-right'" data-color="'blue-1'"></div>
+									<div data-ng-bind="item.active ? 'View' : 'Learn More' "></div>
+								</div>						
+							</div>
+						</div>
+					</div>
+					<div class="header">U.S. Subscriptions</div>
+				</div>
+				<div class="int">					
+					<div class="items">
+						<div data-ng-repeat="item in subsInt | subsOther | orderBy:'name'" class="subscription" data-ng-class="{'owned':item.active}" data-ng-mouseenter="enter(item)" data-ng-mouseleave="leave()">
+							<div class="top">
+								<div class="ls-container">
+									<div class="title" data-ng-bind="item.name"></div>
+								</div>							
+							</div>
+							<div class="bottom" data-ng-click="open(item)">
+								<div class="ls-container">
+									<div class="view-icon" data-dtw-icon data-icon="'chevron-circle-right'" data-color="'blue-1'"></div>
+									<div data-ng-bind="item.active ? 'View' : 'Learn More' "></div>
+								</div>						
+							</div>
+						</div>
+					</div>
+					<div class="header">International Subscriptions</div>
+				</div>
+						
+			</div>
+		</div>
+	</div>
+
+	<div class="right">
+		<div class="ls-container">
+			<div class="header" data-ng-if="selected.name">Report Titles</div>
+			<div class="body">
+				<div class="list" data-ng-if="selected.name">
+					<ul>
+						<!-- <li data-ng-repeat="item in selected.subs | subOther | orderBy:'crm_product_name'" data-ng-bind="item.crm_product_name" data-ng-class="{'active':item.active}"></li> -->
+						<li data-ng-repeat="item in selected.subs | subOther | orderBy:'name'" data-ng-bind="item.name" data-ng-class="{'active':item.active}"></li>
+					</ul>
+				</div>
+				<div class="links">
+<!-- 					<div>What are Interactive Data Supplements?</div>
+					<div>Contact Us</div> -->
+					<a data-ng-href="{{linkInfo}}" target="_blank">What are Interactive Data Supplements?</a>
+					<a data-ng-href="{{linkContact}}" target="_blank">Contact Us</a>
+				</div>
+			</div>
+		</div>		
+	</div>
+
+	<div class="divider"></div>
+
+</div>
